@@ -54,6 +54,7 @@ class Group {
     constructor(value) {
         this.value = value;
         this.group = [];
+        //Create empty group
     }
     //Create add method, only add if not already a member.
     add(value) {
@@ -82,6 +83,21 @@ class Group {
             return false;
             //Return false if value is not in group
         }
+    }
+    //Create intersection method, check if value in this group is in another group. Then return the common of the two groups in a new group.
+    intersection(value) {
+        let newGroup = new Group();
+        //Create new group
+        for(let i = 0; i < this.group.length; i++) {
+            //Loop through group
+            if(this.group[i] in value.group) {
+                //Check if value in this group is in another group
+                newGroup.add(this.group[i]);
+                //Add value to new group
+            }
+        }
+        return newGroup;
+        //Return new group
     }
 }
 
