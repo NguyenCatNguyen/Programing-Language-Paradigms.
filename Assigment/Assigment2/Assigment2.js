@@ -99,6 +99,8 @@ class Group {
         return newGroup;
         //Return new group
     }
+    //Create union method, check if value in this group is in another group. Then return the union of the two groups in a new group.
+    union(value) {
 }
 
 
