@@ -51,22 +51,21 @@ comment each line of code (using //) and/or provide a multi-line comment
 //Create a group class
 class Group {
     //Create constructor
-    constructor(value) {
-        this.value = value;
+    constructor() {
         this.group = [];
         //Create empty group
     }
     //Create add method, only add if not already a member.
     add(value) {
-        if(!(this.value in this.group)) {
+        if(!(value in this.group)) {
             //Check if value is in group
-            this.group.push(this.value);
+            this.group.push(value);
             //Add value to group
         }
     }
     //Create delete method, remove argument from group if it was a member.
     delete(value) {
-        if(this.value in this.group) {
+        if(value in this.group) {
             //Check if value is in group
             this.group.pop(this.value);
             //Remove value from group
@@ -74,7 +73,7 @@ class Group {
     } 
     //Create has method, return boolean value indicating if argument is a member of group.
     has(value) {
-        if(this.value in this.group) {
+        if(value in this.group) {
             //Check if value is in group
             return true;
             //Return true if value is in group
@@ -99,6 +98,21 @@ class Group {
         return newGroup;
         //Return new group
     }
+    //Create union method, check if value in this group is in another group. Then return this group with the difference from the other group to the new group.
+    union(value) {
+        let newGroup = new Group();
+        //Create new group
+        for(let i = 0; i < this.group.length; i++) {
+            //Loop through group
+            if(this.group[i] in value.group) {
+                //Check if value in this group is in another group
+                newGroup.add(this.group[i]);
+                //Add value to new group
+            }
+        }
+        return newGroup;
+        //Return new group
+    }
 };
 
 
@@ -107,4 +121,6 @@ group1.add(1);
 group1.add(2);
 group1.add(3);
 
+console.log(group1);
+group1.add(1);
 console.log(group1);
