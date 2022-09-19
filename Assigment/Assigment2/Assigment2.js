@@ -58,7 +58,7 @@ class Group {
     }
     //Create add method, only add if not already a member.
     add(value) {
-        if(!this.has.value) {
+        if(!(this.value in this.group)) {
             //Check if value is in group
             this.group.push(this.value);
             //Add value to group
@@ -99,12 +99,12 @@ class Group {
         return newGroup;
         //Return new group
     }
-    //Create union method, check if value in this group is in another group. Then return the union of the two groups in a new group.
-    union(value) {
-}
+};
 
 
 let group1 = new Group();
 group1.add(1);
 group1.add(2);
+group1.add(3);
+
 console.log(group1);
