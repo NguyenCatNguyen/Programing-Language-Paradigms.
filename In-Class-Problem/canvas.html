@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<canvas width="300" height="300"></canvas>
+<!-- <p>Create the size of the canvas 300x300 </p> -->
+
+<script>
+let cx = document.querySelector("canvas").getContext("2d");
+//Telling the web to create canvas
+cx.beginPath();
+
+cx.moveTo(30, 30);
+// Set the initial point of the line at (30,30)
+cx.lineTo(80, 30);
+// Draw the line from point (30,30) to (80,30)
+cx.lineTo(90, 80);
+// Draw the line from point (80,30) to (90,80)
+cx.lineTo(20,80);
+// Draw the line from (90,80) to (20,80)
+cx.closePath();
+// Close off the path by connect the last two line
+cx.stroke();
+// Make stroke
+</script>
+  </body>
+</html>
