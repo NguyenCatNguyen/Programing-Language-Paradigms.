@@ -25,14 +25,18 @@ d) Show whether R is antisymmetric or not. e) Show whether R is transitive or no
 """
 
 
+#Main function
 #Let create two list of tuples R1 and R2
 R1 = [(1,1), (2,2), (3,3)]
 R2 = [(1,1), (1,2), (1,3), (1,4)]
 
 #Function to find the union of two list of tuples
 def union(R1, R2):
-    U = [R1+R2]
+    U = R1 + R2
+    #Using set function to remove duplicates and convert back to list.
+    U = list(set(U))
     return U
+
 
 #Function to find the intersection of two list of tuples
 def intersection(R1, R2):
@@ -44,22 +48,30 @@ def difference(R1, R2):
     D = [x for x in R1 if x not in R2]
     return D
 
-#Function to find the inverse of a list of tuples
-def inverse(R):
-    I = [(y,x) for (x,y) in R]
-    return I
+#Function to find the composition of two list of tuples
+def composition(R1, R2):
+    C = []
+    for x in R1:
+        for y in R2:
+            if x[1] == y[0]:
+                C.append((x[0], y[1]))
+    return C
+
 
 
 #Part 1 of the assigment.
-print("1. For the relationship")
-print("R1 = ", R1)
-print("R2 = ", R2)
-print("Perform the following set operations and display the results:")
-print(f"a) R1∪R2 : {union(R1, R2)}")
+print("1. Perform the following set operations and display the results: \n")
+print(f"a) R1 U R2 : {union(R1, R2)}\n")
+print(f"b) R1 ∩ R2 : {intersection(R1, R2)}\n")
+print(f"c) R1 - R2 : {difference(R1, R2)}\n")
+print(f"d) R2 - R1 : {difference(R2, R1)}\n")
 
 
 
 
-
-
-
+#Part 2 of the assigment.
+#Let create two list of tuples R and S
+R = [(1, 1), (1, 4), (2, 3), (3, 1), (3, 4)]
+S = [(1, 0), (2, 0), (3, 1), (3, 2), (4, 1)]
+print(f"2. Display S ◦ R:\n")
+print(f"S ◦ R : {composition(S, R)}\n")
