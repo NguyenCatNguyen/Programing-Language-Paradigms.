@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+
+    <script type="text/javascript">
+      let cx = document.querySelector("canvas").getContext("2d");
+      cx.scale(3, .5);
+      //scale everything from here on
+      cx.beginPath();
+      //tells Canvas we’re going to draw a path
+      cx.arc(50, 50, 40, 0, Math.PI);
+      //draw a half circle, center at (50,50) , with radius 40, then draw a 180 degree.
+      cx.lineWidth = 3;
+      //set line width to 3 pixels
+      cx.stroke();
+      //draw it
+    </script>
+  </body>
+</html>
