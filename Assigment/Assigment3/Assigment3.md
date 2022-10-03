@@ -40,6 +40,7 @@ page.
       <div data-tabname="Chalk">Rock Chalk ...</div>
       <div data-tabname="Jayhawk">Rock Chalk Jayhawk - Go KU!</div>
 </tab-panel>
+
 <script>
   function asTabs(node) {
     // Your code here.
@@ -51,3 +52,4 @@ this solution is a rather complicated program and if you use any part of it you 
 need to explain in the comments what it is doing in significant detail.
 • Provide comments for the JavaScript code that explain what each line of code is
 doing. See rubric below. You do not have to comment the HTML code.
+
