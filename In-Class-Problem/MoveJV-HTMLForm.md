@@ -19,13 +19,17 @@ let output = document.querySelector("#output"):
 select.addEventListener("change", () => {
 // addEventListener is the function that add the event listener to the select tag.
 let number = 0:
-for (let option of Array.from(select.options)) f
+for (let option of Array.from(select.options))
+// Array.from is the function that convert the select.options to an array.
 if (option.selected) {
 number += Number(option.value):
 // Number is the function that convert the string to number.
 output.textContent = number:
+// textContent is the property that store the value of the span tag.
 }
 }); 
 </script>
 }
 ```
+
+
