@@ -1,6 +1,8 @@
 
 1. What value will this code show for the question mark (?)?
+
    - When we run this program, the value should be 14.
+   
 1. Comment each line of JavaScript showing how it calculated your
 answer for No. 1.
 ```JavaScript
@@ -9,7 +11,7 @@ answer for No. 1.
 <option value="1">0001</option>
 <option value="2">0010</option>
 <option value="4">0100</option>
-<option value="g">1000</option>
+<option value="8">1000</option>
 </select> = <span id="output">0</span>
 <script>
 let select = document.querySelector("select");
@@ -31,5 +33,4 @@ output.textContent = number:
 </script>
 }
 ```
-
 
