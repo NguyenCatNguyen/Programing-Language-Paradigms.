@@ -6,11 +6,20 @@
 -  DOM help the JS code run in html file. 
 
 # JavaScript
-1. Using for Loops
+1. Using for Loops. 
     - `LongHand`
+
     ```JavaScript
-    {
         const fruits = ['mango','peach','banana'];
         for (let i = 0; i < fruits.length; i++)
-    }
     ```
+
+2. Functions
+- A function in JavaScript is a set of statements that performs a task or calculates a value.
+- There are three types of functions:
+    - Preload 
+    - Create
+    - Update 
+
+
+
