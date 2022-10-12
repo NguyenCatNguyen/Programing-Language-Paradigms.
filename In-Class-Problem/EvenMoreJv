@@ -1,0 +1,39 @@
+1. Draw what the code below would display on the client’s browser.
+
+![](Desktop/ Display.png )
+
+
+2. Assume the code is in a file named “EECS368InClassProblem2.html”, draw what the code below would display on the client’s browser if the user selected this file name.
+- 
+3. What would the console output be?
+
+
+
+
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<input type="file" multiple>
+<script>
+let input = document.querySelector("input");
+input.addEventListener("change", () => {
+for (let file of Array.from(input.files)) {
+let reader = new FileReader();
+reader.addEventListener("load", () => {
+console.log("File", file.name, "starts with", reader.result.slice(0, 20));
+});
+reader.readAsText(file);
+}
+});
+</script>
+  </body>
+</html>
+```
