@@ -22,4 +22,6 @@
     - Update 
 
 
+## Elements function
+- `getContext()` return a draw context on the canvas, or null if the canvas is not supported.
 

@@ -1,0 +1,74 @@
+<!--
+Name of program: EECS 368 Assignment 4
+Author name: Nguyen Cat Nguyen
+Date: Oct 17, 2022
+Description: This program is to draw pie charts using script on canvas
+and output pie charts with notation on them.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Assigment</title>
+</head>
+<body>
+    <canvas width=" 2000" height="2000"></canvas>
+    <script>
+        // First data set for pie chart
+        const data1 = [{name: "Satisfied", count: 927, color: "darkseagreen"}
+        ,{name: "Neutral", count: 463, color: "chocolate"}
+        ,{name: "Unsatisfied", count: 213, color: "sienna"}
+        ,{name: "No comment", count: 510, color: "rosybrown"}];
+        // Second data set for pie chart
+        const data2 = [
+        {name: "Very Happy", count: 104, color: "tan"},
+        {name: "Happy", count: 63, color: "darkseagreen"},
+        {name: "Neutral", count: 87, color: "pink"},
+        {name: "Very unhappy", count: 26, color: "lightblue"},
+        {name: "Unhappy", count: 51, color: "lightyellow"},
+        {name: "No comment", count: 18, color: "lightgreen"},]
+
+        // Function to draw pie chart
+        function drawPieChart(data,cx,center,radius){
+            // Calculate the total value using reduce function
+            let total = data.reduce((sum,{count}) => sum + count, 0);
+            // Set the current angle to -0.5 * Math.PI
+            let currentAngle = -0.5 * Math.PI;
+            // Create a loop to draw the pie chart
+            for (let element of data){
+                // Calculate the slice angle
+                let sliceAngle = (element.count / total) * 2 * Math.PI;
+                // Start draw the pie chart
+                cx.beginPath();
+                // Start draw the arc at the current angle position
+                cx.arc(center.x, center.y, radius,
+                    currentAngle, currentAngle + sliceAngle);
+                // Set the current angle to the current angle + slice angle
+                currentAngle += sliceAngle;
+                // Draw the line to the center of the pie chart
+                cx.lineTo(center.x, center.y);
+                // Fill the color for the pie chart
+                cx.fillStyle = element.color;
+                // Fill the pie chart
+                cx.fill();
+                // Draw the text for the pie chart, pick the text color, size and style.       
+                cx.fillStyle = "black";
+                cx.textAlign = "center";
+                cx.textBaseline = "middle";
+                cx.font = "20px Garamond";
+                // Place the text at the center of each slide
+                cx.fillText(element.name, center.x + radius * Math.cos(currentAngle - sliceAngle / 2), center.y + radius * Math.sin(currentAngle - sliceAngle / 2));
+            }
+        }
+        let cx = document.querySelector("canvas").getContext("2d");
+        drawPieChart(data1, cx, {x: 400, y: 300}, 200);
+        drawPieChart(data2, cx, {x: 1000, y: 300}, 200);
+
+  
+
+    </script>
+    
+</body>
+</html>
