@@ -5,7 +5,7 @@
     - Yes, the API is an RPC because it is a remote procedure call. RPCs are used to communicate between two computers over a network which is what the API does. 
 
 2. Is the API SOAP? Explain why.
-    - No, the API is not SOAP because SOAP is a protocol that is used to exchange information between computers. The API is not a protocol, it is a remote procedure call.
+    - No, the API is not SOAP because SOAP is a protocol for API that is used to exchange information between computers. The API is not a protocol, it is a remote procedure call.
 
 3. Does the API follow the REST client-server architecture style? Explain why.
     - Yes, the API follows the REST client-server architecture style because it is a client-server architecture style. The client is the user and the server is the API. The client sends a request to the server and the server responds with the data.
