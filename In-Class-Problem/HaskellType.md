@@ -5,7 +5,7 @@
 (’a’,’b’,’c ’) :: [Char]
 [(False,’O’),(True,’1’)] :: [(Bool,Char),(Bool,Int)]
 ([False,True],[’0’,’1’]) :: ([Bool,Bool],[Int,Int])
-[tail, init, reverse] :: [[a1] -> [a1], ]
+[tail, init, reverse] :: [Function ]
 ```
 
 
