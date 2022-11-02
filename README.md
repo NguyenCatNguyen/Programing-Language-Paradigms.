@@ -25,3 +25,7 @@
 ## Elements function
 - `getContext()` return a draw context on the canvas, or null if the canvas is not supported.
 
+
+
+## HTTP and Forms
+- HTTP is a protocol that allows the fetching of resources, such as HTML documents.
