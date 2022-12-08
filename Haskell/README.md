@@ -1,4 +1,5 @@
 # Haskell
+- Way to run haskell file with terminal `runghc hello.hs`
 
 ## Type
 - A `type` is a name for a collection of related values.
